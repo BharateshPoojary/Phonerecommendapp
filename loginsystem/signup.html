@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp for an account</title>
+    <style>
+        .formcontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 2%;
+        }
+
+        input {
+            height: 30px;
+            width: 350px;
+            border-color: rgb(178, 178, 197);
+            border-radius: 5px;
+            font-size: 17px;
+        }
+
+        input:focus {
+            border-color: black;
+        }
+
+        label {
+            font-size: 1.5rem;
+            color: #1a202c;
+        }
+
+        span {
+            font-family: Calibri;
+        }
+
+        .Signupform {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Calibri;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(44, 44, 44);
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+
+        .signupbutton {
+            border-radius: 5px;
+            margin-top: 5px;
+            height: 35px;
+            width: 360px;
+            background-color: black;
+            color: white;
+        }
+
+        .signupbutton:hover {
+            background-color: rgb(79, 79, 79);
+        }
+
+        .maincontainer {
+            margin-top: 7%;
+        }
+
+        .loginredirect {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            color: rgb(79, 79, 79);
+            font-size: 1.5rem;
+            font-family: Calibri;
+        }
+
+        span {
+            color: rgb(79, 79, 79);
+        }
+
+        #login {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #login:hover {
+            color: rgb(79, 79, 79);
+        }
+    </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="Signupform">Signup to our website</div>
+        <div class="formcontainer">
+            <form action="http://localhost/MYPROJECTLOGINPAGE/signup.php" method="post">
+                <!--The action attribute in an HTML <form> element specifies the URL where the form data should be submitted when the form is submitted by the user. It defines the endpoint where the browser sends the data for processing,
+                     typically a server-side script or a web application here post method is used in order to send login credentials to the server so that it can be stored in database  -->
+                <label for="username"><span>User Name</span></label><br>
+                <input type="text" id="username" maxlength="25" name="username" required><br>
+                <label for="password"><span>Password</span></label><br>
+                <input type="password" id="password" maxlength="11" name="password" required><br>
+                <label for="cpassword"><span>Confirm Password</span></label><br>
+                <input type="password" id="cpassword" maxlength="11" name="cpassword" required><br>
+                <span>Make sure to type the same password</span><br>
+                <button class="signupbutton">Sign Up</button>
+                <div class="loginredirect">Already a member? <a href="login.html" id="login">Log
+                        In</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
