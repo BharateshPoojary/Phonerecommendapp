@@ -134,4 +134,13 @@ latestphonedata.forEach(obj => {
     phoneimage.src=obj.PhoneImageUrl
     cardforeachphone.appendChild(phoneimage)
     console.log(obj.PhoneImageUrl);
+    // let phonename=document.createElement("h2");
+    // phonename.innerHTML=obj.PhoneName;
+    // cardforeachphone.appendChild(phonename);
+    // let phoneram=document.createElement("h2");
+    // phonename.innerHTML=obj.PhoneName;
+    // cardforeachphone.appendChild(phonename);
+    // let phonename=document.createElement("h2");
+    // phonename.innerHTML=obj.PhoneName;
+    // cardforeachphone.appendChild(phonename);
 });
