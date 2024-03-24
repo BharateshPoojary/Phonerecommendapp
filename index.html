@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Recommend App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Phone Recommend App</h1>
-    
+    <nav>
+        <ul>
+            <li>
+                <span class="welcomeinfo">Welcome-</span>
+                <span class="username">Bharatesh Poojary</span>
+            </li>
+            <li>
+                <img src="comparelist.png" alt="compareicon" height="30px" width="25px">
+                <a href="#">View Compare List</a>
+            </li>
+            <li>
+                <img src="operating-system-icon.png" alt="OSicon" height="30px" width="25px">
+                <span>Operating System</span><br>
+                <select name="OS" id="OS">
+                    <option value="Android">
+                        <img src="android-robot-bot-icon.png" alt="androidicon">
+                        <a href="#">
+                            Android
+                        </a>
+
+                    </option>
+                    <option value="iphone"><a href="#">IOS</a></option>
+                </select>
+            </li>
+            <li>
+                <span>Pricing Category</span><br>
+                <select name="price" id="price">
+                    <option value="budget">Under Rs.10,000</option>
+                    <option value="mid-budget">Under Rs.20,000</option>
+                    <option value="mid-range-premium">Under Rs.40,000</option>
+                    <option value="flagship">Under Rs.70,000</option>
+                    <option value="ultra-flagship">Above Rs.80,000</option>
+                </select>
+            </li>
+            <li>Dark mode</li>
+            <li>log out</li>
+        </ul>
+    </nav>
 </body>
 <script type="module" src="index.js"></script>
 </html>
