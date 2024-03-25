@@ -9,44 +9,50 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li>
-                <span class="welcomeinfo">Welcome-</span>
-                <span class="username">Bharatesh Poojary</span>
-            </li>
-            <li>
-                <img src="comparelist.png" alt="compareicon" height="30px" width="25px">
-                <a href="#">View Compare List</a>
-            </li>
-            <li>
-                <img src="operating-system-icon.png" alt="OSicon" height="30px" width="25px">
-                <span>Operating System</span><br>
-                <select name="OS" id="OS">
-                    <option value="Android">
-                        <img src="android-robot-bot-icon.png" alt="androidicon">
-                        <a href="#">
-                            Android
-                        </a>
+    <div class="navcontainer">
+        <span>Welcome</span>
+        <span>Bharatesh Poojary</span>
 
-                    </option>
-                    <option value="iphone"><a href="#">IOS</a></option>
-                </select>
-            </li>
-            <li>
-                <span>Pricing Category</span><br>
-                <select name="price" id="price">
-                    <option value="budget">Under Rs.10,000</option>
-                    <option value="mid-budget">Under Rs.20,000</option>
-                    <option value="mid-range-premium">Under Rs.40,000</option>
-                    <option value="flagship">Under Rs.70,000</option>
-                    <option value="ultra-flagship">Above Rs.80,000</option>
-                </select>
-            </li>
-            <li>Dark mode</li>
-            <li>log out</li>
-        </ul>
-    </nav>
+        <div class="comparelistcontainer">
+            <img src="comparelist.png" alt="compareicon" height="35px" width="35px">
+            <a href="#" id="comparelistredirect">View Compare List</a>
+        </div>
+        <div class="OSselectioncontainer">
+            <img src="operating-system-icon.png" alt="OSicon" height="35px" width="35px">
+            <div class="OSselectiondropdown">Operating System </div>
+        </div>
+        <div class="dropdown">
+            <div class="select">
+                <span class="selected">Android</span>&nbsp;
+                <div id="arrow"></div>
+            </div>
+        </div>
+        <div class="osmenucontainer">
+            <ul id="osmenu">
+                <li class="active">Android</li>
+                <li>IOS</li>
+            </ul>
+        </div>
+        <div class="priceselectioncontainer">
+            <img src="rupee-coin-solid-icon.png" id="priceicon" alt="priceicon" height="40px" width="40px">
+            <div class="Priceselectiondropdown">Price Categories </div>
+            <div id="arrow"></div>
+        </div>
+        <!-- <li>
+            <span>Pricing Category</span><br>
+            <select name="price" id="price">
+                <option value="budget">Under Rs.10,000</option>
+                <option value="mid-budget">Under Rs.20,000</option>
+                <option value="mid-range-premium">Under Rs.40,000</option>
+                <option value="flagship">Under Rs.70,000</option>
+                <option value="ultra-flagship">Above Rs.80,000</option>
+            </select>
+        </li> -->
+        <!-- <li>Dark mode</li>
+        <li>log out</li> -->
+
+    </div>
 </body>
 <script type="module" src="index.js"></script>
+
 </html>
