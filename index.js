@@ -13,7 +13,7 @@ window.addEventListener("load",async()=>{
     }
    
    })
-    let latestphonedata= await(await fetch("http://localhost/MYPROJECTLOGINPAGE/phonedata/phoneapi.php")).json();
+    let latestphonedata= await(await fetch("http://localhost/PHONEAPIBACKEND/displayphoneinfo.php")).json();
     console.log(latestphonedata);
 
 let divforcard=document.createElement("div");
