@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Info App</title>
+    <title>Phone Specs</title>
+    <link rel="stylesheet" href="phonespecs.css">
 </head>
+
 <body>
-    <h1>Enter Your Phone Info</h1>
-    <form action="http://localhost/PHONEAPIBACKEND/accessphoneinfo.php" method="post">
-        <label for="PhoneName" >Enter PhoneName:</label>
-        <input type="text" id="PhoneName" name="PhoneName" required><br>
-        <label for="PhoneImageUrl" >Enter PhoneImageUrl:</label>
-        <input type="text" id="PhoneImageUrl" name="PhoneImageUrl" required><br>
-        <label for="Price" >Enter Price:</label>
-        <input type="text" id="Price" name="Price" required><br>
-        <label for="Ram" >Enter Ram:</label>
-        <input type="text" id="Ram" name="Ram" required><br>
-        <label for="Processor" >Enter Processor:</label>
-        <input type="text" id="Processor" name="Processor" required><br>
-        <label for="RearCamera" >Enter RearCamera Specs:</label>
-        <input type="text" id="RearCamera" name="RearCamera" required><br>
-        <label for="FrontCamera" >Enter FrontCamera Specs:</label>
-        <input type="text" id="FrontCamera" name="FrontCamera" required><br>
-        <label for="Battery" >Enter Battery:</label>
-        <input type="text" id="Battery" name="Battery" required><br>
-        <label for="Display" >Enter Display:</label>
-        <input type="text" id="Display" name="Display" required><br>
-        <button class="insertbutton">Insert Phone Specs</button>
-        
-    </form>
+    <div class="maincontainer">
+       
+        <form action="http://localhost/PHONEAPIBACKEND/accessphoneinfo.php" method="post">
+            <div class="titlecontainer">Enter the Phone Specification</div>
+            <label for="PhoneName">Enter PhoneName:</label>
+            <input type="text" id="PhoneName" name="PhoneName" required><br>
+            <label for="PhoneImageUrl">Enter PhoneImageUrl:</label>
+            <input type="text" id="PhoneImageUrl" name="PhoneImageUrl" required><br>
+            <label for="Price">Enter Price:</label>
+            <input type="text" id="Price" name="Price" required><br>
+            <label for="Ram">Enter Ram:</label>
+            <input type="text" id="Ram" name="Ram" required><br>
+            <label for="Processor">Enter Processor:</label>
+            <input type="text" id="Processor" name="Processor" required><br>
+            <label for="RearCamera">Enter RearCamera Specs:</label>
+            <input type="text" id="RearCamera" name="RearCamera" required><br>
+            <label for="FrontCamera">Enter FrontCamera Specs:</label>
+            <input type="text" id="FrontCamera" name="FrontCamera" required><br>
+            <label for="Battery">Enter Battery:</label>
+            <input type="text" id="Battery" name="Battery" required><br>
+            <label for="Display">Enter Display:</label>
+            <input type="text" id="Display" name="Display" required><br>
+            <div class="btncontainer">
+                <button class="insertbutton">Insert Phone Specs</button>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
