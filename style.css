@@ -6,6 +6,7 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: "Poppins",sans-serif;
+   
 }
 span{
     font-size: xx-large;
@@ -22,6 +23,10 @@ font-size: larger;
     align-items: center;
     margin-top: 14px;
     font-size: larger;
+}
+
+#usernamevalue{
+    word-wrap: break-word;
 }
 body{
     background: rgb(239, 238, 238);
