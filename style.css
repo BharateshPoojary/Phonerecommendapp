@@ -91,9 +91,7 @@ body::-webkit-scrollbar{
     align-items: center;
     font-size: xx-large;
 }
-#arrow-rotate{
-    transform: rotate(180deg);
-}
+
 .select{
   display: flex;
   flex-direction: row;

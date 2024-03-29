@@ -8,7 +8,7 @@ window.addEventListener("load", async () => {
         usernamevalue.textContent = username;
         let sinup_inhiding = document.querySelector(".signup-incontainer")
         sinup_inhiding.style.display = "none";
-        
+
 
     } catch (error) {
         let usernamevalue = document.getElementById("usernamevalue");
@@ -19,8 +19,9 @@ window.addEventListener("load", async () => {
 
     let osmenu = document.getElementById("osmenu");
     osmenu.style.display = "none";
-    let togglearrow = document.getElementById("arrow");
-    togglearrow.addEventListener("click", () => {
+    let OSselectioncontainer = document.querySelector(".OSselectioncontainer");
+    OSselectioncontainer.addEventListener("click", () => {
+        let togglearrow = document.getElementById("arrow");
         if (togglearrow.style.transform === "rotate(0deg)") {
             togglearrow.style.transform = "rotate(180deg)";
             osmenu.style.display = "block";
@@ -31,8 +32,9 @@ window.addEventListener("load", async () => {
     })
     let pricemenu = document.getElementById("pricemenu");
     pricemenu.style.display = "none";
-    let togglepricearrow = document.getElementById("pricearrow");
-    togglepricearrow.addEventListener("click", () => {
+    let priceselectioncontainer = document.querySelector(".priceselectioncontainer");
+    priceselectioncontainer.addEventListener("click", () => {
+        let togglepricearrow=document.getElementById("pricearrow");
         if (togglepricearrow.style.transform === "rotate(0deg)") {
             togglepricearrow.style.transform = "rotate(180deg)";
             pricemenu.style.display = "block";
@@ -44,7 +46,7 @@ window.addEventListener("load", async () => {
     let logout = document.querySelector(".logoutcontainer");
     logout.addEventListener("click", () => {
         sessionStorage.clear();
-        window.location.href = "loginsystem/login.html";
+        window.location.href = "landing.html";
     })
     let signup_in = document.querySelector(".signup-incontainer");
     signup_in.addEventListener("click", () => {
