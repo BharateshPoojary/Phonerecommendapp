@@ -13,9 +13,35 @@ span{
 }
 #comparelistredirect{
 font-size: larger;
+color: black;
 }
 .comparelistcontainer{
-    margin-top: 14px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+.comparelistcontainer:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+ 
+}
+#android{
+    transition: transform 0.3s ease;
+}
+#android:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+ 
+}
+#ios{
+    transition: transform 0.3s ease;
+}
+#ios:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+ 
 }
 .OSselectioncontainer{
     display: flex;
@@ -37,6 +63,10 @@ body{
     bottom:0;
     background: rgb(255, 255, 255);
     width:220px;
+    margin-left: 5px;
+    border-right: 3px solid black;
+    border-top-right-radius: 14px;
+    box-shadow: 2px 3px 4px rgba(0,0,0,0.3) ;
 }
 .welcomeinfo.username{
     text-align: center;
@@ -51,6 +81,7 @@ body::-webkit-scrollbar{
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
     border-top:10px solid black;
+    margin-left: 2px;;
    
 }
 .dropdown{
@@ -70,13 +101,10 @@ body::-webkit-scrollbar{
   align-items: center;
 }
 #osmenu{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
     font-size: xx-large;
     list-style: none;
-    animation: slidedown 1s 1 forwards;
+    animation: slidedown  1s forwards;
 }
 @keyframes slidedown {
     from{
@@ -103,10 +131,104 @@ body::-webkit-scrollbar{
     justify-content: center;
     margin-top: 14px;
     font-size: larger;
+    padding-right: 10px;
     
 }
 #priceicon{
-   margin-right: 10px;
+   margin-right: 25px;
 }
+#pricearrow{
+    width:0;
+    height:0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top:10px solid black;  
+}
+.pricemenucontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+}
+#pricemenu{
+    cursor: pointer;
+    font-size: x-large;
+    list-style: none;
+    animation: slidedown  1s forwards;
+}
+.price{
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+.price:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+ 
+}
+.otherfeature{
+    list-style: none;
+    position: absolute;
+    bottom:0;
+    font-size: x-large;
+}
+#mode{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+#mode:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+}
+.logoutcontainer{
+    position: relative;
+    display: flex;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 
+}
+.logoutcontainer:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+}
+.signup-incontainer{
+    position: relative;
+    display: flex;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+}
+.signup-incontainer:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+}
+.OSselectioncontainer{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.OSselectioncontainer:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+}
+.priceselectioncontainer{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.priceselectioncontainer:hover{
+    transform: scale(1.1,1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+}

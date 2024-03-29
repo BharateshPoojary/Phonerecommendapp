@@ -6,52 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Recommend App</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <div class="navcontainer">
         <span>Welcome</span>
-        <span id="usernamevalue"></span> 
-        <div class="comparelistcontainer">
-            <img src="comparelist.png" alt="compareicon" height="35px" width="35px">
-            <a href="#" id="comparelistredirect">View Compare List</a>
-        </div>
-        <div class="OSselectioncontainer">
-            <img src="operating-system-icon.png" alt="OSicon" height="35px" width="35px">
-            <div class="OSselectiondropdown">Operating System </div>
-        </div>
-        <div class="dropdown">
-            <div class="select">
-                <span class="selected">Android</span>&nbsp;
+        <span id="usernamevalue" ></span>
+      
+        <svg width="210" height="10" >
+            <line x1="0" y1="0" x2="210" y2="0" stroke="black" stroke-width="3" />
+        </svg>
+          
+        <div class="featurescontainer">
+            <div class="comparelistcontainer">
+                <img src="comparelist.png" alt="compareicon" height="35px" width="35px">
+                <a href="comparelist.html" id="comparelistredirect">View Compare List</a>
+            </div>
+            <div class="OSselectioncontainer">
+                <img src="operating-system-icon.png" alt="OSicon" height="35px" width="35px">
+                <div class="OSselectiondropdown">Operating System </div>
                 <div id="arrow"></div>
             </div>
+
+            <div class="osmenucontainer">
+                <ul id="osmenu">
+                    <li id="android"><img src="android-robot-bot-icon.png" alt="android" height="25px" width="25px">Android</li>
+                    <li id="ios"><img src="apple-icon.png" alt="android" height="25px" width="25px">IOS</li>
+                </ul>
+            </div>
+
+            <div class="priceselectioncontainer">
+                <img src="rupee-coin-solid-icon.png" id="priceicon" alt="priceicon" height="40px" width="40px">
+                <div class="Priceselectiondropdown">Price Categories </div>
+                <div id="pricearrow"></div>
+            </div>
         </div>
-        <div class="osmenucontainer">
-            <ul id="osmenu">
-                <li class="active">Android</li>
-                <li>IOS</li>
+        <div class="pricemenucontainer">
+            <ul id="pricemenu">
+                <li class="price">Under Rs.10,000</li>
+                <li class="price">Under Rs.20,000</li>
+                <li class="price"> Under Rs.40,000</li>
+                <li class="price">Under Rs.70,000</li>
+                <li class="price">Above Rs.80,000</li>
             </ul>
         </div>
-        <div class="priceselectioncontainer">
-            <img src="rupee-coin-solid-icon.png" id="priceicon" alt="priceicon" height="40px" width="40px">
-            <div class="Priceselectiondropdown">Price Categories </div>
-            <div id="arrow"></div>
+       
+        <div class="otherfeature">
+            <svg width="210" height="10">
+                <line x1="0" y1="0" x2="210" y2="0" stroke="black" stroke-width="3" />
+            </svg>
+            <li id="mode">Enable Dark mode</li>
+            <div class="signup-incontainer">
+                <li>Signup/in</li>&nbsp;
+                <img height="25px" width="25px" src="log-in-icon.png" alt="logout">
+            </div>
+            <div class="logoutcontainer">
+                <li>log out</li>&nbsp;
+                <img height="25px" width="25px" src="sign-out-icon.png" alt="logout">
+            </div>
         </div>
-        <!-- <li>
-            <span>Pricing Category</span><br>
-            <select name="price" id="price">
-                <option value="budget">Under Rs.10,000</option>
-                <option value="mid-budget">Under Rs.20,000</option>
-                <option value="mid-range-premium">Under Rs.40,000</option>
-                <option value="flagship">Under Rs.70,000</option>
-                <option value="ultra-flagship">Above Rs.80,000</option>
-            </select>
-        </li> -->
-        <!-- <li>Dark mode</li>
-        <li>log out</li> -->
 
     </div>
+    <script type="module" src="index.js"></script>
 </body>
-<script type="module" src="index.js"></script>
 
 </html>

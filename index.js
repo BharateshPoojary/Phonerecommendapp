@@ -1,8 +1,22 @@
+
+
 window.addEventListener("load", async () => {
-    let usernamedetail=JSON.parse(localStorage.getItem('usernamedetail'));
-    let username=usernamedetail.username;
-    let usernamevalue=document.getElementById("usernamevalue");
-    usernamevalue.textContent=username;
+    try {
+        let usernamedetail = JSON.parse(sessionStorage.getItem('usernamedetail'));
+        let username = usernamedetail.username;
+        let usernamevalue = document.getElementById("usernamevalue");
+        usernamevalue.textContent = username;
+        let sinup_inhiding = document.querySelector(".signup-incontainer")
+        sinup_inhiding.style.display = "none";
+        
+
+    } catch (error) {
+        let usernamevalue = document.getElementById("usernamevalue");
+        usernamevalue.textContent = "User";
+        let logouthiding = document.querySelector(".logoutcontainer")
+        logouthiding.style.display = "none";
+    }
+
     let osmenu = document.getElementById("osmenu");
     osmenu.style.display = "none";
     let togglearrow = document.getElementById("arrow");
@@ -15,7 +29,29 @@ window.addEventListener("load", async () => {
             osmenu.style.display = "none";
         }
     })
-    let latestphonedata = await (await fetch("http://localhost/PHONEAPIBACKEND/displayphoneinfo.php")).json();
+    let pricemenu = document.getElementById("pricemenu");
+    pricemenu.style.display = "none";
+    let togglepricearrow = document.getElementById("pricearrow");
+    togglepricearrow.addEventListener("click", () => {
+        if (togglepricearrow.style.transform === "rotate(0deg)") {
+            togglepricearrow.style.transform = "rotate(180deg)";
+            pricemenu.style.display = "block";
+        } else {
+            togglepricearrow.style.transform = "rotate(0deg)";
+            pricemenu.style.display = "none";
+        }
+    })
+    let logout = document.querySelector(".logoutcontainer");
+    logout.addEventListener("click", () => {
+        sessionStorage.clear();
+        window.location.href = "loginsystem/login.html";
+    })
+    let signup_in = document.querySelector(".signup-incontainer");
+    signup_in.addEventListener("click", () => {
+        window.location.href = "loginsystem/signup.html";
+    })
+
+    let latestphonedata = await (await fetch("http://localhost/phonerecommendapp(Backend)/displayphoneinfo.php")).json();
     console.log(latestphonedata);
 
     let divforcard = document.createElement("div");
@@ -45,4 +81,6 @@ window.addEventListener("load", async () => {
         phoneram.innerHTML = obj.Ram;
         cardforeachphone.appendChild(phoneram);
     });
+
+
 });
