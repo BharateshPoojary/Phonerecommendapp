@@ -1,232 +1,220 @@
-*{
-    margin: 0;
-    padding: 0;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: "Poppins",sans-serif;
-   
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-span{
-    font-size: xx-large;
+span {
+  font-size: xx-large;
 }
-#comparelistredirect{
-font-size: larger;
-color: black;
+#comparelistredirect {
+  font-size: larger;
+  color: black;
 }
-.comparelistcontainer{
-    margin-top: 10px;
-    transition: transform 0.3s ease;
+.comparelistcontainer {
+  margin-top: 10px;
+  transition: transform 0.3s ease;
 }
-.comparelistcontainer:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
- 
+.comparelistcontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-#android{
-    transition: transform 0.3s ease;
+#android {
+  transition: transform 0.3s ease;
 }
-#android:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
- 
+#android:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-#ios{
-    transition: transform 0.3s ease;
+#ios {
+  transition: transform 0.3s ease;
 }
-#ios:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
- 
+#ios:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-.OSselectioncontainer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 14px;
-    font-size: larger;
+.OSselectioncontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 14px;
+  font-size: larger;
 }
 
-#usernamevalue{
-    word-wrap: break-word;
+#usernamevalue {
+  word-wrap: break-word;
 }
-body{
-    background: rgb(239, 238, 238);
+body {
+  background: rgb(255, 255, 255);
 }
-.navcontainer{
-    position: fixed;
-    top:0;
-    bottom:0;
-    background: rgb(255, 255, 255);
-    width:220px;
-    margin-left: 5px;
-    border-right: 3px solid black;
-    border-top-right-radius: 14px;
-    box-shadow: 2px 3px 4px rgba(0,0,0,0.3) ;
+.navcontainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  width: 220px;
+  margin-left: 5px;
+  border-right: 3px solid black;
+  border-top-right-radius: 14px;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
 }
-.welcomeinfo.username{
-    text-align: center;
-    display: flex;
+.welcomeinfo.username {
+  text-align: center;
+  display: flex;
 }
-body::-webkit-scrollbar{
-    display: none;
+body::-webkit-scrollbar {
+  display: none;
 }
-#arrow{
-    width:0;
-    height:0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top:10px solid black;
-    margin-left: 2px;;
-   
+#arrow {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid black;
+  margin-left: 2px;
 }
-.dropdown{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: xx-large;
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
 }
 
-.select{
+.select {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-#osmenu{
-    cursor: pointer;
-    font-size: xx-large;
-    list-style: none;
-    animation: slidedown  1s forwards;
+#osmenu {
+  cursor: pointer;
+  font-size: xx-large;
+  list-style: none;
+  animation: slidedown 1s forwards;
 }
 @keyframes slidedown {
-    from{
-       opacity: 0;
-       transform: translateY(0);
-        
-    }
-    to{
-        opacity: 1;
-       transform: translateY(2px);
-        
-    }
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(2px);
+  }
 }
-.osmenucontainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.osmenucontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.priceselectioncontainer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 14px;
-    font-size: larger;
-    padding-right: 10px;
-    
+.priceselectioncontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  font-size: larger;
+  padding-right: 10px;
 }
-#priceicon{
-   margin-right: 25px;
+#priceicon {
+  margin-right: 25px;
 }
-#pricearrow{
-    width:0;
-    height:0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top:10px solid black;  
+#pricearrow {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid black;
 }
-.pricemenucontainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+.pricemenucontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#pricemenu{
-    cursor: pointer;
-    font-size: x-large;
-    list-style: none;
-    animation: slidedown  1s forwards;
+#pricemenu {
+  cursor: pointer;
+  font-size: x-large;
+  list-style: none;
+  animation: slidedown 1s forwards;
 }
-.price{
-    margin-top: 10px;
-    transition: transform 0.3s ease;
+.price {
+  margin-top: 10px;
+  transition: transform 0.3s ease;
 }
-.price:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
- 
+.price:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-.otherfeature{
-    list-style: none;
-    position: absolute;
-    bottom:0;
-    font-size: x-large;
+.otherfeature {
+  list-style: none;
+  position: absolute;
+  bottom: 0;
+  font-size: x-large;
 }
-#mode{
-    cursor: pointer;
-    transition: transform 0.3s ease;
+#mode {
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-#mode:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+#mode:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-.logoutcontainer{
-    position: relative;
-    display: flex;
-    /* margin-top: 10px; */
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-
+.logoutcontainer {
+  position: relative;
+  display: flex;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
-.logoutcontainer:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+.logoutcontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-.signup-incontainer{
-    position: relative;
-    display: flex;
-    /* margin-top: 10px; */
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-
+.signup-incontainer {
+  position: relative;
+  display: flex;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
-.signup-incontainer:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+.signup-incontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-.OSselectioncontainer{
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.OSselectioncontainer {
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.OSselectioncontainer:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+.OSselectioncontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
-.priceselectioncontainer{
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.priceselectioncontainer {
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.priceselectioncontainer:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,0.5) ;
+.priceselectioncontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }

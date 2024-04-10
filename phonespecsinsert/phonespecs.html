@@ -11,14 +11,14 @@
 <body>
     <div class="maincontainer">
 
-        <form action="http://localhost/PHONEAPIBACKEND/accessphoneinfo.php" method="post">
+        <form action="http://localhost/phonerecommendapp(Backend)/accessphoneinfo.php" method="post">
             <div class="titlecontainer">Enter the Phone Specification</div>
             <label for="PhoneName">Enter PhoneName:</label>
             <input type="text" id="PhoneName" name="PhoneName" required><br>
             <label for="PhoneImageUrl">Enter PhoneImageUrl:</label>
             <input type="text" id="PhoneImageUrl" name="PhoneImageUrl" required><br>
             <label for="Price">Enter Price:</label>
-            <input type="text" id="Price" name="Price" required><br>
+            <input type="number" id="Price" name="Price" required><br>
             <label for="Ram">Enter Ram:</label>
             <input type="text" id="Ram" name="Ram" required><br>
             <label for="Processor">Enter Processor:</label>
@@ -31,6 +31,12 @@
             <input type="text" id="Battery" name="Battery" required><br>
             <label for="Display">Enter Display:</label>
             <input type="text" id="Display" name="Display" required><br>
+            <label for="OS">Enter OS:</label>
+            <input type="text" id="OS" name="OS" required><br>
+            <label for="Storage">Enter Storage:</label>
+            <input type="text" id="Storage" name="Storage" required><br>
+            <label for="Level">Enter Level:</label>
+            <input type="text" id="Level" name="Level" required><br>
             <div class="btncontainer">
                 <button class="insertbutton">Insert Phone Specs</button>
             </div>
