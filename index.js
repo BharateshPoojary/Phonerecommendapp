@@ -54,8 +54,8 @@ window.addEventListener("load", async () => {
         window.location.href = "loginsystem/signup.html";
     })
 
-    let latestphonedata = await (await fetch("http://localhost/phonerecommendapp(Backend)/displayphoneinfo.php")).json();
-    console.log(latestphonedata[0]);
+    let phonedata = await (await fetch("http://localhost/phonerecommendapp(Backend)/displayphoneinfo.php")).json();
+    console.log(phonedata);
     let divforcard = document.createElement("div");
     divforcard.style.display = "flex";
     divforcard.style.flexWrap = "wrap";
@@ -63,31 +63,60 @@ window.addEventListener("load", async () => {
     divforcard.style.marginLeft = "230px";
     document.body.appendChild(divforcard)
 
-    latestphonedata[0].forEach(obj => {
-        let cardforeachphone = document.createElement("div");
-        cardforeachphone.style.height = "450px";
-        cardforeachphone.style.width = "25rem";
-        cardforeachphone.style.border = "2px solid black";
-        cardforeachphone.style.display = "flex";
-        cardforeachphone.style.marginTop = "5px";
-        cardforeachphone.style.marginRight = "15px";
-        cardforeachphone.style.marginLeft = "5px";
 
-        cardforeachphone.style.flexDirection = "column"
-        divforcard.appendChild(cardforeachphone);
-        let phoneimage = document.createElement("img");
-        phoneimage.src = obj.PhoneImageUrl;
-        phoneimage.style.height = "296px";
-        phoneimage.style.width = "200px";
-        phoneimage.style.alignSelf = "center";
-        cardforeachphone.appendChild(phoneimage);
-        let phonename = document.createElement("h2");
-        phonename.innerHTML = obj.PhoneName;
-        cardforeachphone.appendChild(phonename);
-        let phoneram = document.createElement("h2");
-        phoneram.innerHTML = obj.Ram;
-        cardforeachphone.appendChild(phoneram);
+    let phonecategoriesAvailable = ["Top SmartPhones", "Best Phones in Android", "Best Phones in IOS"];
+    let currentCategoryIndex = 0;
+    const divOfTitleNames = ["divForTopTitle", "divForAndroidTitle", "divForIOSTitle"];
+    let currentTitleNameIndex = 0;
+    phonedata.forEach(phonearray => {
+
+        let divForTitle = document.createElement('div');
+        divForTitle.id = divOfTitleNames[currentTitleNameIndex];
+        divForTitle.style.display = "flex";
+        divForTitle.style.width = "100%";
+        divforcard.appendChild(divForTitle);
+
+        let title = document.createElement('span');
+        title.innerHTML = phonecategoriesAvailable[currentCategoryIndex];
+        divForTitle.appendChild(title);
+        currentTitleNameIndex++;
+        currentCategoryIndex++;
+        let onClickAndroid = document.getElementById("android");
+        onClickAndroid.addEventListener("click", () => {
+            const divForAndroidTitle = document.getElementById("divForAndroidTitle");
+            divForAndroidTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        let onClickIOS = document.getElementById("ios");
+        onClickIOS.addEventListener("click", () => {
+            const divForIOSTitle = document.getElementById("divForIOSTitle");
+            divForIOSTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        phonearray.forEach(obj => {
+
+            let cardforeachphone = document.createElement("div");
+            cardforeachphone.style.height = "450px";
+            cardforeachphone.style.width = "20rem";
+            cardforeachphone.style.border = "2px solid black";
+            cardforeachphone.style.display = "flex";
+            cardforeachphone.style.marginTop = "5px";
+            cardforeachphone.style.marginRight = "15px";
+            cardforeachphone.style.marginLeft = "5px";
+
+            cardforeachphone.style.flexDirection = "column"
+            divforcard.appendChild(cardforeachphone);
+            let phoneimage = document.createElement("img");
+            phoneimage.src = obj.PhoneImageUrl;
+            phoneimage.style.height = "296px";
+            phoneimage.style.width = "200px";
+            phoneimage.style.alignSelf = "center";
+            cardforeachphone.appendChild(phoneimage);
+            let phonename = document.createElement("h2");
+            phonename.innerHTML = obj.PhoneName;
+            cardforeachphone.appendChild(phonename);
+            let phoneram = document.createElement("h2");
+            phoneram.innerHTML = obj.Ram;
+            cardforeachphone.appendChild(phoneram);
+        })
     });
-
-
 });
+
