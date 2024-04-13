@@ -2,7 +2,7 @@
 
 window.addEventListener("load", async () => {
     try {
-        let usernamedetail = JSON.parse(sessionStorage.getItem('usernamedetail'));
+        let usernamedetail = JSON.parse(localStorage.getItem('usernamedetail'));
         let username = usernamedetail.username;
         let usernamevalue = document.getElementById("usernamevalue");
         usernamevalue.textContent = username;
@@ -46,7 +46,7 @@ window.addEventListener("load", async () => {
     })
     let logout = document.querySelector(".logoutcontainer");
     logout.addEventListener("click", () => {
-        sessionStorage.clear();
+        localStorage.clear();
         window.location.href = "landing.html";
     })
     let signup_in = document.querySelector(".signup-incontainer");
@@ -64,9 +64,9 @@ window.addEventListener("load", async () => {
     document.body.appendChild(divforcard)
 
 
-    let phonecategoriesAvailable = ["Top SmartPhones", "Best Phones in Android", "Best Phones in IOS"];
+    let phonecategoriesAvailable = ["Top SmartPhones", " Phones in Android", " Phones in IOS", "Phones Under Rs.10,000", "Phones Under Rs.20,000"];
     let currentCategoryIndex = 0;
-    const divOfTitleNames = ["divForTopTitle", "divForAndroidTitle", "divForIOSTitle"];
+    const divOfTitleNames = ["divForTopTitle", "divForAndroidTitle", "divForIOSTitle", "divForUnder10kPhones", "divForUnder20kPhones"];
     let currentTitleNameIndex = 0;
     phonedata.forEach(phonearray => {
 
@@ -90,6 +90,16 @@ window.addEventListener("load", async () => {
         onClickIOS.addEventListener("click", () => {
             const divForIOSTitle = document.getElementById("divForIOSTitle");
             divForIOSTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        let onClick10kphones = document.getElementById("10kphones");
+        onClick10kphones.addEventListener("click", () => {
+            const divForUnder10kPhones = document.getElementById("divForUnder10kPhones");
+            divForUnder10kPhones.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        let onClick20kphones = document.getElementById("20kphones");
+        onClick20kphones.addEventListener("click", () => {
+            const divForUnder20kPhones = document.getElementById("divForUnder20kPhones");
+            divForUnder20kPhones.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
         phonearray.forEach(obj => {
 
