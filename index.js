@@ -64,9 +64,9 @@ window.addEventListener("load", async () => {
     document.body.appendChild(divforcard)
 
 
-    let phonecategoriesAvailable = ["Top SmartPhones", " Phones in Android", " Phones in IOS", "Phones Under Rs.10,000", "Phones Under Rs.20,000"];
+    let phonecategoriesAvailable = ["Top SmartPhones", " Phones in Android", " Phones in IOS", "Phones Under Rs.10,000", "Phones Under Rs.20,000", "Phones Under Rs.40,000", "Phones Under Rs.70,000", "Phones Above Rs.80,000"];
     let currentCategoryIndex = 0;
-    const divOfTitleNames = ["divForTopTitle", "divForAndroidTitle", "divForIOSTitle", "divForUnder10kPhones", "divForUnder20kPhones"];
+    const divOfTitleNames = ["divForTopTitle", "divForAndroidTitle", "divForIOSTitle", "divForUnder10kPhones", "divForUnder20kPhones", "divForUnder40kPhones", "divForUnder70kPhones", "divForAbove80kPhones"];
     let currentTitleNameIndex = 0;
     phonedata.forEach(phonearray => {
 
@@ -100,6 +100,21 @@ window.addEventListener("load", async () => {
         onClick20kphones.addEventListener("click", () => {
             const divForUnder20kPhones = document.getElementById("divForUnder20kPhones");
             divForUnder20kPhones.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        let onClick40kphones = document.getElementById("40kphones");
+        onClick40kphones.addEventListener("click", () => {
+            const divForUnder40kPhones = document.getElementById("divForUnder40kPhones");
+            divForUnder40kPhones.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        let onClick70kphones = document.getElementById("70kphones");
+        onClick70kphones.addEventListener("click", () => {
+            const divForUnder70kPhones = document.getElementById("divForUnder70kPhones");
+            divForUnder70kPhones.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        let onClick80kphones = document.getElementById("80kphones");
+        onClick80kphones.addEventListener("click", () => {
+            const divForAbove80kPhones = document.getElementById("divForAbove80kPhones");
+            divForAbove80kPhones.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
         phonearray.forEach(obj => {
 
