@@ -4,7 +4,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   font-family: "Poppins", sans-serif;
 }
 span {
@@ -55,14 +55,18 @@ body {
 }
 .navcontainer {
   position: fixed;
-  top: 0;
-  bottom: 0;
   background: rgb(255, 255, 255);
   width: 220px;
+  height: 100%;
+  max-height: calc(100vh - 3px);
+  overflow-y: auto;
   margin-left: 5px;
   border-right: 3px solid black;
   border-top-right-radius: 14px;
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+}
+.navcontainer::-webkit-scrollbar {
+  display: none;
 }
 .welcomeinfo.username {
   text-align: center;
@@ -144,6 +148,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
   font-size: x-large;
   list-style: none;
+  /* padding: 10px; */
   animation: slidedown 1s forwards;
 }
 .price {
@@ -157,7 +162,7 @@ body::-webkit-scrollbar {
 }
 .otherfeature {
   list-style: none;
-  position: absolute;
+  position: relative;
   bottom: 0;
   font-size: x-large;
 }
@@ -171,9 +176,8 @@ body::-webkit-scrollbar {
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
 .logoutcontainer {
-  position: relative;
+  /* position: relative; */
   display: flex;
-  /* margin-top: 10px; */
   margin-bottom: 10px;
   align-items: center;
   justify-content: center;
@@ -186,9 +190,8 @@ body::-webkit-scrollbar {
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
 .signup-incontainer {
-  position: relative;
+  /* position: relative; */
   display: flex;
-  /* margin-top: 10px; */
   margin-bottom: 10px;
   align-items: center;
   justify-content: center;
@@ -217,4 +220,8 @@ body::-webkit-scrollbar {
   transform: scale(1.1, 1.1);
   border-radius: 10px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#mobilecontainer {
+  position: absolute;
+  top: 0;
 }

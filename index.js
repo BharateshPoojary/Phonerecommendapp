@@ -124,8 +124,9 @@ window.addEventListener("load", async () => {
             cardforeachphone.style.border = "2px solid black";
             cardforeachphone.style.display = "flex";
             cardforeachphone.style.marginTop = "5px";
-            cardforeachphone.style.marginRight = "15px";
+            cardforeachphone.style.marginRight = "10px";
             cardforeachphone.style.marginLeft = "5px";
+            cardforeachphone.style.paddingRight = "35px";
 
             cardforeachphone.style.flexDirection = "column"
             divforcard.appendChild(cardforeachphone);
@@ -135,11 +136,12 @@ window.addEventListener("load", async () => {
             phoneimage.style.width = "200px";
             phoneimage.style.alignSelf = "center";
             cardforeachphone.appendChild(phoneimage);
-            let phonename = document.createElement("h2");
-            phonename.innerHTML = obj.PhoneName;
+            let phonename = document.createElement("p");
+            phonename.innerHTML = "Phone Name:&nbsp;" + obj.PhoneName;
+            phonename.style.fontWeight = "bold";
             cardforeachphone.appendChild(phonename);
-            let phoneram = document.createElement("h2");
-            phoneram.innerHTML = obj.Ram;
+            let phoneram = document.createElement("p");
+            phoneram.innerHTML = "Ram &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; : " + obj.Ram;
             cardforeachphone.appendChild(phoneram);
         })
     });
