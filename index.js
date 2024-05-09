@@ -120,12 +120,12 @@ window.addEventListener("load", async () => {
 
             let cardforeachphone = document.createElement("div");
             cardforeachphone.style.height = "450px";
-            cardforeachphone.style.width = "20rem";
+            cardforeachphone.style.width = "20.5rem";
             cardforeachphone.style.border = "2px solid black";
             cardforeachphone.style.display = "flex";
             cardforeachphone.style.marginTop = "5px";
-            cardforeachphone.style.marginRight = "10px";
-            cardforeachphone.style.marginLeft = "5px";
+            cardforeachphone.style.marginRight = "2px";
+            cardforeachphone.style.marginLeft = "2px";
             cardforeachphone.style.paddingRight = "35px";
 
             cardforeachphone.style.flexDirection = "column"
@@ -133,16 +133,65 @@ window.addEventListener("load", async () => {
             let phoneimage = document.createElement("img");
             phoneimage.src = obj.PhoneImageUrl;
             phoneimage.style.height = "296px";
+
             phoneimage.style.width = "200px";
             phoneimage.style.alignSelf = "center";
             cardforeachphone.appendChild(phoneimage);
             let phonename = document.createElement("p");
-            phonename.innerHTML = "Phone Name:&nbsp;" + obj.PhoneName;
-            phonename.style.fontWeight = "bold";
+            phonename.innerHTML = "Phone Name:&nbsp;" + "<b>" + obj.PhoneName + "</b>";
+            phonename.style.marginLeft = "5px";
+            // phonename.style.fontSize = "1.1rem";
+            phonename.style.marginTop = "5px";
             cardforeachphone.appendChild(phonename);
             let phoneram = document.createElement("p");
-            phoneram.innerHTML = "Ram &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; : " + obj.Ram;
+            phoneram.innerHTML = "Ram &nbsp;: " + "<b>" + obj.Ram + "</b>";
+            phoneram.style.marginLeft = "5px";
+            phoneram.style.marginTop = "5px";
             cardforeachphone.appendChild(phoneram);
+            let phoneprocessor = document.createElement('p');
+            phoneprocessor.style.marginTop = "5px";
+            phoneprocessor.innerHTML = "Processor:" + "<b>" + obj.Processor + "</b>";
+            phoneprocessor.style.marginLeft = "5px";
+            cardforeachphone.appendChild(phoneprocessor);
+            let phonePrice = document.createElement('p');
+            phonePrice.innerHTML = "Price:" + "<b>" + obj.Price + "</b>";
+            phonePrice.style.marginLeft = "5px";
+            phonePrice.style.marginTop = "5px";
+            cardforeachphone.appendChild(phonePrice);
+            let fullSpecsButton = document.createElement('button');
+            fullSpecsButton.innerHTML = "View Full Specs  &nbsp ->";
+            fullSpecsButton.style.width = "100%";
+            fullSpecsButton.style.height = "100%px;"
+            fullSpecsButton.style.backgroundColor = "black";
+            fullSpecsButton.style.color = "white";
+            fullSpecsButton.style.marginLeft = "18px";
+            fullSpecsButton.style.marginTop = "10px";
+            fullSpecsButton.style.marginBottom = "10px";
+            fullSpecsButton.style.paddingTop = "10px";
+            fullSpecsButton.style.paddingBottom = "10px";
+            fullSpecsButton.style.borderRadius = "15px";
+            fullSpecsButton.id = "fullSpecsButton";
+            fullSpecsButton.style.cursor = "pointer";
+            fullSpecsButton.addEventListener('click', () => {
+                let fullSpecsatag = document.createElement('a');
+                fullSpecsatag.href = "phonespecs.html";
+                fullSpecsatag.click();
+
+            })
+            cardforeachphone.appendChild(fullSpecsButton);
+            const phoneSpecification = () => {
+                let Battery = obj.Battery;
+                let Display = obj.Display;
+                let frontCam = obj.FrontCamera;
+                let OS = obj.OS;
+                let rearCam = obj.RearCamera;
+                let Storage = obj.Storage;
+                let phoneDetails = { 'Battery': Battery, 'Display': Display, 'frontCamera': frontCam, 'OS': OS, 'rearCam': rearCam, 'Storage': Storage };
+                localStorage.setItem('phoneDetails', JSON.stringify(phoneDetails));
+
+            }
+            fullSpecsButton.addEventListener('click', phoneSpecification);
+
         })
     });
 });

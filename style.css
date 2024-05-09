@@ -225,3 +225,11 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 0;
 }
+#fullSpecsButton {
+  transition: transform 0.3s ease;
+}
+#fullSpecsButton:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
