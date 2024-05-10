@@ -1,0 +1,10 @@
+.phoneSpecs {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 6px;
+  font-size: larger;
+}
+#divforPhoneDetails {
+  display: flex;
+  flex-direction: row;
+}

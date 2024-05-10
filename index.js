@@ -172,22 +172,24 @@ window.addEventListener("load", async () => {
             fullSpecsButton.style.borderRadius = "15px";
             fullSpecsButton.id = "fullSpecsButton";
             fullSpecsButton.style.cursor = "pointer";
-            fullSpecsButton.addEventListener('click', () => {
-                let fullSpecsatag = document.createElement('a');
-                fullSpecsatag.href = "phonespecs.html";
-                fullSpecsatag.click();
-
-            })
             cardforeachphone.appendChild(fullSpecsButton);
             const phoneSpecification = () => {
+                let phoneName = obj.PhoneName;
+                let Ram = obj.Ram;
+                let Processor = obj.Processor;
+                let Price = obj.Price;
+                let PhoneImageUrl = obj.PhoneImageUrl;
                 let Battery = obj.Battery;
                 let Display = obj.Display;
                 let frontCam = obj.FrontCamera;
                 let OS = obj.OS;
                 let rearCam = obj.RearCamera;
                 let Storage = obj.Storage;
-                let phoneDetails = { 'Battery': Battery, 'Display': Display, 'frontCamera': frontCam, 'OS': OS, 'rearCam': rearCam, 'Storage': Storage };
+                let phoneDetails = { 'phoneName': phoneName, 'Ram': Ram, 'Processor': Processor, 'Price': Price, 'PhoneImageUrl': PhoneImageUrl, 'Battery': Battery, 'Display': Display, 'frontCamera': frontCam, 'OS': OS, 'rearCam': rearCam, 'Storage': Storage };
                 localStorage.setItem('phoneDetails', JSON.stringify(phoneDetails));
+                let fullSpecsatag = document.createElement('a');
+                fullSpecsatag.href = "phonespecs.html";
+                fullSpecsatag.click();
 
             }
             fullSpecsButton.addEventListener('click', phoneSpecification);
