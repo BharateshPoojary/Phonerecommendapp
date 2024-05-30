@@ -8,3 +8,17 @@
   display: flex;
   flex-direction: row;
 }
+#Favouritelistbutton {
+  height: 50px;
+  width: 35%;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: large;
+  color: black;
+  background-image: url(add-to-favorites-icon.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 8%;
+  cursor: pointer;
+}

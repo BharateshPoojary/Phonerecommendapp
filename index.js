@@ -8,11 +8,11 @@ window.addEventListener("load", async () => {
         usernamevalue.textContent = username;
         let sinup_inhiding = document.querySelector(".signup-incontainer")
         sinup_inhiding.style.display = "none";
-
-
     } catch (error) {
         let usernamevalue = document.getElementById("usernamevalue");
         usernamevalue.textContent = "User";
+        let usernameObject = { 'username': "User" };
+        localStorage.setItem('usernamedetail', JSON.stringify(usernameObject));
         let logouthiding = document.querySelector(".logoutcontainer")
         logouthiding.style.display = "none";
     }
@@ -46,7 +46,9 @@ window.addEventListener("load", async () => {
     })
     let logout = document.querySelector(".logoutcontainer");
     logout.addEventListener("click", () => {
-        localStorage.clear();
+        window.alert("Are you sure you want to logout this will remove your all Favourite phone data");
+        localStorage.removeItem("favlistdata");
+        localStorage.removeItem("usernamedetail");
         window.location.href = "landing.html";
     })
     let signup_in = document.querySelector(".signup-incontainer");
@@ -69,7 +71,7 @@ window.addEventListener("load", async () => {
     const divOfTitleNames = ["divForTopTitle", "divForAndroidTitle", "divForIOSTitle", "divForUnder10kPhones", "divForUnder20kPhones", "divForUnder40kPhones", "divForUnder70kPhones", "divForAbove80kPhones"];
     let currentTitleNameIndex = 0;
     phonedata.forEach(phonearray => {
-
+        console.log(phonearray);
         let divForTitle = document.createElement('div');
         divForTitle.id = divOfTitleNames[currentTitleNameIndex];
         divForTitle.style.display = "flex";
@@ -117,7 +119,8 @@ window.addEventListener("load", async () => {
             divForAbove80kPhones.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
         phonearray.forEach(obj => {
-
+            let phoneId = obj.PhoneId;
+            // console.log(phoneId);
             let cardforeachphone = document.createElement("div");
             cardforeachphone.style.height = "450px";
             cardforeachphone.style.width = "20.5rem";
@@ -128,7 +131,7 @@ window.addEventListener("load", async () => {
             cardforeachphone.style.marginLeft = "2px";
             cardforeachphone.style.paddingRight = "35px";
 
-            cardforeachphone.style.flexDirection = "column"
+            cardforeachphone.style.flexDirection = "column";
             divforcard.appendChild(cardforeachphone);
             let phoneimage = document.createElement("img");
             phoneimage.src = obj.PhoneImageUrl;
@@ -185,7 +188,7 @@ window.addEventListener("load", async () => {
                 let OS = obj.OS;
                 let rearCam = obj.RearCamera;
                 let Storage = obj.Storage;
-                let phoneDetails = { 'phoneName': phoneName, 'Ram': Ram, 'Processor': Processor, 'Price': Price, 'PhoneImageUrl': PhoneImageUrl, 'Battery': Battery, 'Display': Display, 'frontCamera': frontCam, 'OS': OS, 'rearCam': rearCam, 'Storage': Storage };
+                let phoneDetails = { 'phoneId': phoneId, 'phoneName': phoneName, 'Ram': Ram, 'Processor': Processor, 'Price': Price, 'PhoneImageUrl': PhoneImageUrl, 'Battery': Battery, 'Display': Display, 'frontCamera': frontCam, 'OS': OS, 'rearCamera': rearCam, 'Storage': Storage };
                 localStorage.setItem('phoneDetails', JSON.stringify(phoneDetails));
                 let fullSpecsatag = document.createElement('a');
                 fullSpecsatag.href = "phonespecs.html";
