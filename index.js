@@ -121,6 +121,7 @@ window.addEventListener("load", async () => {
             let phoneId = obj.PhoneId;
             // console.log(phoneId);
             let cardforeachphone = document.createElement("div");
+            cardforeachphone.id = "cardforeachphone";
             cardforeachphone.style.height = "450px";
             cardforeachphone.style.width = "20.5rem";
             cardforeachphone.style.border = "2px solid black";

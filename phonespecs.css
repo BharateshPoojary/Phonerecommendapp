@@ -21,4 +21,10 @@
   background-repeat: no-repeat;
   background-position: 8%;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.Favouritelistbutton:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }

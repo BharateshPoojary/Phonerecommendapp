@@ -83,27 +83,28 @@ window.addEventListener("load", async () => {
         RemoveFavouritelistbutton.style.display = "block";
         RemoveFavouritelistbutton.disabled = false;
         RemoveFavouritelistbutton.addEventListener('click', async () => {
-            let accessing_username_from_localstorage = JSON.parse(localStorage.getItem('usernamedetail'));
-            let username = accessing_username_from_localstorage.username;
-            let accessing_phonedata_from_localstorage = JSON.parse(localStorage.getItem('phoneDetails'));
-            let userandphonedatatodelete = {
-                username: username,
-                phoneId: accessing_phonedata_from_localstorage.phoneId,
-            };
-            const deletefavphonedatafrombackend = "http://localhost/phonerecommendapp(Backend)/removefavphone.php";
-            let response = await (await fetch(deletefavphonedatafrombackend, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(userandphonedatatodelete)
-            })).json();
-            console.log(response.message);
-            if (response.message == "Deleted") {
-                RemoveFavouritelistbutton.disabled = true;
-                addtoFavouritelistbutton.disabled = false;
+            if (window.confirm(`Are you sure ${username} you want to remove ${phoneDetails.phoneName} from your favouritelist?`)) {
+                let accessing_username_from_localstorage = JSON.parse(localStorage.getItem('usernamedetail'));
+                let username = accessing_username_from_localstorage.username;
+                let accessing_phonedata_from_localstorage = JSON.parse(localStorage.getItem('phoneDetails'));
+                let userandphonedatatodelete = {
+                    username: username,
+                    phoneId: accessing_phonedata_from_localstorage.phoneId,
+                };
+                const deletefavphonedatafrombackend = "http://localhost/phonerecommendapp(Backend)/removefavphone.php";
+                let response = await (await fetch(deletefavphonedatafrombackend, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(userandphonedatatodelete)
+                })).json();
+                console.log(response.message);
+                if (response.message == "Deleted") {
+                    RemoveFavouritelistbutton.disabled = true;
+                    addtoFavouritelistbutton.disabled = false;
+                }
             }
-
         });
 
     }

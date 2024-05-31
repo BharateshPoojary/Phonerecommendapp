@@ -184,6 +184,16 @@ body::-webkit-scrollbar {
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+#cardforeachphone {
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+#cardforeachphone:hover {
+  /* transform: translate3d(1.1, 1.1); */
+  transform: scale(0.9);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
 .logoutcontainer:hover {
   transform: scale(1.1, 1.1);
   border-radius: 10px;
