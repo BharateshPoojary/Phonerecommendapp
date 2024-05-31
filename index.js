@@ -1,21 +1,23 @@
 
 
 window.addEventListener("load", async () => {
-    try {
-        let usernamedetail = JSON.parse(localStorage.getItem('usernamedetail'));
-        let username = usernamedetail.username;
-        let usernamevalue = document.getElementById("usernamevalue");
-        usernamevalue.textContent = username;
-        let sinup_inhiding = document.querySelector(".signup-incontainer")
-        sinup_inhiding.style.display = "none";
-    } catch (error) {
-        let usernamevalue = document.getElementById("usernamevalue");
-        usernamevalue.textContent = "User";
-        let usernameObject = { 'username': "User" };
-        localStorage.setItem('usernamedetail', JSON.stringify(usernameObject));
-        let logouthiding = document.querySelector(".logoutcontainer")
+
+    let usernamedetail = JSON.parse(localStorage.getItem('usernamedetail'));
+    let username = usernamedetail.username;
+    let usernamevalue = document.getElementById("usernamevalue");
+    usernamevalue.textContent = username;
+    if (username == "User") {
+        let logouthiding = document.querySelector(".logoutcontainer");
         logouthiding.style.display = "none";
+        let signup_inhiding = document.querySelector(".signup-incontainer");
+        signup_inhiding.style.display = "flex";
+    } else {
+        let logouthiding = document.querySelector(".logoutcontainer");
+        logouthiding.style.display = "flex";
+        let signup_inhiding = document.querySelector(".signup-incontainer");
+        signup_inhiding.style.display = "none";
     }
+
 
     let osmenucontainer = document.getElementById("osmenu");
     osmenucontainer.style.display = "none";
@@ -46,9 +48,6 @@ window.addEventListener("load", async () => {
     })
     let logout = document.querySelector(".logoutcontainer");
     logout.addEventListener("click", () => {
-        window.alert("Are you sure you want to logout this will remove your all Favourite phone data");
-        localStorage.removeItem("favlistdata");
-        localStorage.removeItem("usernamedetail");
         window.location.href = "landing.html";
     })
     let signup_in = document.querySelector(".signup-incontainer");
@@ -143,7 +142,6 @@ window.addEventListener("load", async () => {
             let phonename = document.createElement("p");
             phonename.innerHTML = "Phone Name:&nbsp;" + "<b>" + obj.PhoneName + "</b>";
             phonename.style.marginLeft = "5px";
-            // phonename.style.fontSize = "1.1rem";
             phonename.style.marginTop = "5px";
             cardforeachphone.appendChild(phonename);
             let phoneram = document.createElement("p");

@@ -62,8 +62,13 @@ window.addEventListener("load", async () => {
     divforPhoneDetails.appendChild(divforphoneSpecs);
     let addtoFavouritelistbutton = document.createElement('button');
     addtoFavouritelistbutton.innerText = "Add to favourite";
-    addtoFavouritelistbutton.id = "Favouritelistbutton";
+    addtoFavouritelistbutton.className = "Favouritelistbutton";
     document.body.appendChild(addtoFavouritelistbutton);
+    let RemoveFavouritelistbutton = document.createElement('button');
+    RemoveFavouritelistbutton.innerText = "Remove from favourite";
+    RemoveFavouritelistbutton.className = "Favouritelistbutton";
+    RemoveFavouritelistbutton.style.display = "none";
+    document.body.appendChild(RemoveFavouritelistbutton);
     const sendusernameandphoneIdtobackend = "http://localhost/phonerecommendapp(Backend)/favlistverification.php";
     let verficationresponse = await (await fetch(sendusernameandphoneIdtobackend, {
         method: "POST",
@@ -74,7 +79,33 @@ window.addEventListener("load", async () => {
     })).json();
     console.log(verficationresponse.message);
     if (verficationresponse.message == "1") {
-        addtoFavouritelistbutton.style.display = "none";
+        addtoFavouritelistbutton.disabled = true;
+        RemoveFavouritelistbutton.style.display = "block";
+        RemoveFavouritelistbutton.disabled = false;
+        RemoveFavouritelistbutton.addEventListener('click', async () => {
+            let accessing_username_from_localstorage = JSON.parse(localStorage.getItem('usernamedetail'));
+            let username = accessing_username_from_localstorage.username;
+            let accessing_phonedata_from_localstorage = JSON.parse(localStorage.getItem('phoneDetails'));
+            let userandphonedatatodelete = {
+                username: username,
+                phoneId: accessing_phonedata_from_localstorage.phoneId,
+            };
+            const deletefavphonedatafrombackend = "http://localhost/phonerecommendapp(Backend)/removefavphone.php";
+            let response = await (await fetch(deletefavphonedatafrombackend, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userandphonedatatodelete)
+            })).json();
+            console.log(response.message);
+            if (response.message == "Deleted") {
+                RemoveFavouritelistbutton.disabled = true;
+                addtoFavouritelistbutton.disabled = false;
+            }
+
+        });
+
     }
 
     addtoFavouritelistbutton.addEventListener('click', async () => {
@@ -97,9 +128,10 @@ window.addEventListener("load", async () => {
                 },
                 body: JSON.stringify(userandphonedata)
             })).json();
+            console.log(response.message);
             if (response.message == "phoneadded") {
                 window.alert("Added to you favourite list successfully");
-                addtoFavouritelistbutton.style.display = "none";
+                window.location.href = "phonespecs.html";
             }
         }
     });
