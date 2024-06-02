@@ -1,3 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  /* box-sizing: border-box; */
+  font-family: "Poppins", sans-serif;
+}
+span {
+  font-size: xx-large;
+}
+.featurescontainer {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+#comparelistredirect {
+  margin-left: 10px;
+  font-size: larger;
+  color: black;
+}
+.comparelistcontainer {
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+.comparelistcontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.wishlistanimate {
+  animation: scaleupdown 0.5s infinite alternate;
+}
+@keyframes scaleupdown {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+body {
+  background: #ebf2f3;
+}
+.navcontainer {
+  position: fixed;
+  background: #ebf2f3;
+  width: 220px;
+  height: 100%;
+  max-height: calc(100vh - 3px);
+  overflow-y: auto;
+  margin-left: 5px;
+  border-right: 3px solid black;
+  border-top-right-radius: 14px;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+}
+.navcontainer::-webkit-scrollbar {
+  display: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+#arrow {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid black;
+  margin-left: 2px;
+}
+
+.otherfeature {
+  margin-top: 50px;
+  list-style: none;
+  position: relative;
+  bottom: 0;
+  font-size: x-large;
+}
+#mode {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#mode:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.logoutcontainer {
+  /* position: relative; */
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+#cardforeachphone {
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+#cardforeachphone:hover {
+  /* transform: translate3d(1.1, 1.1); */
+  transform: scale(0.9);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.logoutcontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.gobackbutton {
+  /* position: relative; */
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.gobackbutton:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.signup-incontainer {
+  /* position: relative; */
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.signup-incontainer:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#divforallcontent {
+  position: absolute;
+  left: 14.5rem;
+}
+
 .phoneSpecs {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -8,12 +155,13 @@
   display: flex;
   flex-direction: row;
 }
-.Favouritelistbutton {
+#Favouritelistbutton {
   height: 50px;
-  width: 35%;
+  width: 20rem;
   margin-left: 10px;
   border-radius: 10px;
   background-color: white;
+  border: 2px solid black;
   font-size: large;
   color: black;
   background-image: url(add-to-favorites-icon.png);
@@ -23,8 +171,42 @@
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.Favouritelistbutton:hover {
+#Favouritelistbutton:hover {
   transform: scale(1.1, 1.1);
   border-radius: 10px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#RemoveFromFavButton {
+  height: 50px;
+  width: 20rem;
+  /* margin-top: 10px; */
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: large;
+  border: 2px solid black;
+  color: black;
+  background-image: url(delete-from-wishlist-icon.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 8%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#RemoveFromFavButton:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#note {
+  font-family: "Poppins", sans-serif;
+  font-size: large;
+  margin-top: 7px;
+}
+#starimage {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
 }

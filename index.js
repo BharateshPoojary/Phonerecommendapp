@@ -62,7 +62,7 @@ window.addEventListener("load", async () => {
     divforcard.style.flexWrap = "wrap";
     divforcard.id = "mobilecontainer";
     divforcard.style.marginLeft = "230px";
-    document.body.appendChild(divforcard)
+    document.body.appendChild(divforcard);
 
 
     let phonecategoriesAvailable = ["Top SmartPhones", " Phones in Android", " Phones in IOS", "Phones Under Rs.10,000", "Phones Under Rs.20,000", "Phones Under Rs.40,000", "Phones Under Rs.70,000", "Phones Above Rs.80,000"];

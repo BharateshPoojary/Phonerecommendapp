@@ -11,6 +11,7 @@ span {
   font-size: xx-large;
 }
 #comparelistredirect {
+  margin-left: 10px;
   font-size: larger;
   color: black;
 }
@@ -51,11 +52,11 @@ span {
   word-wrap: break-word;
 }
 body {
-  background: rgb(255, 255, 255);
+  background: #ebf2f3;
 }
 .navcontainer {
   position: fixed;
-  background: rgb(255, 255, 255);
+  background: #ebf2f3;
   width: 220px;
   height: 100%;
   max-height: calc(100vh - 3px);

@@ -6,9 +6,15 @@ window.addEventListener("load", async () => {
         username: username,
         phoneId: phoneDetails.phoneId,
     };
+    let divforallcontent = document.createElement('div');
+    divforallcontent.style.display = "flex";
+    divforallcontent.style.flexDirection = "column";
+    divforallcontent.id = "divforallcontent";
+    document.body.appendChild(divforallcontent);
     let divforPhoneDetails = document.createElement('div');
-    divforPhoneDetails.id = "divforPhoneDetails";
-    document.body.appendChild(divforPhoneDetails);
+    divforPhoneDetails.style.display = "flex";
+    divforPhoneDetails.style.flexDirection = "row";
+    divforallcontent.appendChild(divforPhoneDetails);
     let divforphoneImage = document.createElement('div');
     let phoneimage = document.createElement("img");
     phoneimage.src = phoneDetails.PhoneImageUrl;
@@ -60,15 +66,22 @@ window.addEventListener("load", async () => {
     phonerearCam.innerHTML = "RearCamera&nbsp;:&nbsp;" + "<b>" + phoneDetails.rearCamera + "</b>";
     divforphoneSpecs.appendChild(phonerearCam);
     divforPhoneDetails.appendChild(divforphoneSpecs);
+    let divforbutton = document.createElement('div');
+    divforbutton.style.display = "flex";
+    divforbutton.style.flexDirection = "row";
+    divforbutton.style.marginTop = "10px";
+    divforbutton.style.marginBottom = "10px";
+
+    divforallcontent.appendChild(divforbutton);
     let addtoFavouritelistbutton = document.createElement('button');
-    addtoFavouritelistbutton.innerText = "Add to favourite";
-    addtoFavouritelistbutton.className = "Favouritelistbutton";
-    document.body.appendChild(addtoFavouritelistbutton);
+    addtoFavouritelistbutton.innerText = "Add to Wish list";
+    addtoFavouritelistbutton.id = "Favouritelistbutton";
+    divforbutton.appendChild(addtoFavouritelistbutton);
     let RemoveFavouritelistbutton = document.createElement('button');
-    RemoveFavouritelistbutton.innerText = "Remove from favourite";
-    RemoveFavouritelistbutton.className = "Favouritelistbutton";
+    RemoveFavouritelistbutton.innerText = "Remove from Wish list";
+    RemoveFavouritelistbutton.id = "RemoveFromFavButton";
     RemoveFavouritelistbutton.style.display = "none";
-    document.body.appendChild(RemoveFavouritelistbutton);
+    divforbutton.appendChild(RemoveFavouritelistbutton);
     const sendusernameandphoneIdtobackend = "http://localhost/phonerecommendapp(Backend)/favlistverification.php";
     let verficationresponse = await (await fetch(sendusernameandphoneIdtobackend, {
         method: "POST",
@@ -79,9 +92,10 @@ window.addEventListener("load", async () => {
     })).json();
     console.log(verficationresponse.message);
     if (verficationresponse.message == "1") {
-        addtoFavouritelistbutton.disabled = true;
+        const comparelistcontainer = document.querySelector(".comparelistcontainer");
+        comparelistcontainer.classList.add("wishlistanimate");
+        addtoFavouritelistbutton.style.display = "none";
         RemoveFavouritelistbutton.style.display = "block";
-        RemoveFavouritelistbutton.disabled = false;
         RemoveFavouritelistbutton.addEventListener('click', async () => {
             if (window.confirm(`Are you sure ${username} you want to remove ${phoneDetails.phoneName} from your favouritelist?`)) {
                 let accessing_username_from_localstorage = JSON.parse(localStorage.getItem('usernamedetail'));
@@ -101,8 +115,7 @@ window.addEventListener("load", async () => {
                 })).json();
                 console.log(response.message);
                 if (response.message == "Deleted") {
-                    RemoveFavouritelistbutton.disabled = true;
-                    addtoFavouritelistbutton.disabled = false;
+                    window.location.href = "phonespecs.html";
                 }
             }
         });
@@ -114,7 +127,7 @@ window.addEventListener("load", async () => {
         let username = accessing_username_from_localstorage.username;
         let accessing_phonedata_from_localstorage = JSON.parse(localStorage.getItem('phoneDetails'));
         if (username == "User") {
-            window.alert("Sorry cannot add to favourite list please SignUp to our platform");
+            window.alert("Sorry cannot add to wish list please SignUp to our platform");
             window.location.href = "landing.html";
         } else {
             let userandphonedata = {
@@ -131,9 +144,56 @@ window.addEventListener("load", async () => {
             })).json();
             console.log(response.message);
             if (response.message == "phoneadded") {
-                window.alert("Added to you favourite list successfully");
+                window.alert("Added to you wish list successfully");
                 window.location.href = "phonespecs.html";
             }
         }
     });
+    let div_for_note_and_star_img = document.createElement('div');
+
+    div_for_note_and_star_img.style.display = "flex";
+    div_for_note_and_star_img.style.alignItems = "center";
+    div_for_note_and_star_img.style.justifyContent = "center";
+    divforallcontent.appendChild(div_for_note_and_star_img);
+    let starimage = document.createElement('img');
+    starimage.src = "star-full-icon.png";
+    starimage.id = "starimage";
+    div_for_note_and_star_img.appendChild(starimage);
+
+    let note = document.createElement('p');
+    if (verficationresponse.message == "1") {
+        let textforgoingtowishlist = "Go to your wish list section to avail the feature.";
+        note.innerText = textforgoingtowishlist;
+    } else {
+        note.innerText = `Add ${phoneDetails.phoneName} to your wish list to get special features`;
+    }
+    note.id = "note";
+    div_for_note_and_star_img.appendChild(note);
+
+    let usernamedetail = JSON.parse(localStorage.getItem('usernamedetail'));
+    username = usernamedetail.username;
+    if (username == "User") {
+        note.innerText = "Please signup to our platform before adding to your wish list";
+        let logouthiding = document.querySelector(".logoutcontainer");
+        logouthiding.style.display = "none";
+        let signup_inhiding = document.querySelector(".signup-incontainer");
+        signup_inhiding.style.display = "flex";
+    } else {
+        let logouthiding = document.querySelector(".logoutcontainer");
+        logouthiding.style.display = "flex";
+        let signup_inhiding = document.querySelector(".signup-incontainer");
+        signup_inhiding.style.display = "none";
+    }
+    let logout = document.querySelector(".logoutcontainer");
+    logout.addEventListener("click", () => {
+        window.location.href = "landing.html";
+    })
+    let signup_in = document.querySelector(".signup-incontainer");
+    signup_in.addEventListener("click", () => {
+        window.location.href = "loginsystem/signup.html";
+    })
+    let go_Back = document.querySelector(".gobackbutton");
+    go_Back.addEventListener("click", () => {
+        window.location.href = "index.html";
+    })
 });
