@@ -61,7 +61,6 @@ window.addEventListener("load", async () => {
     divforcard.style.display = "flex";
     divforcard.style.flexWrap = "wrap";
     divforcard.id = "mobilecontainer";
-    divforcard.style.marginLeft = "230px";
     document.body.appendChild(divforcard);
 
 

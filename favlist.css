@@ -8,8 +8,14 @@
   outline: none;
   border: none;
   text-decoration: none;
-  /* box-sizing: border-box; */
   font-family: "Poppins", sans-serif;
+}
+#title {
+  position: relative;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  margin-left: 36rem;
 }
 body {
   background: #ebf2f3;
@@ -61,5 +67,86 @@ body::-webkit-scrollbar {
 .gobackbutton:hover {
   transform: scale(1.1, 1.1);
   border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#UnboxingButton {
+  height: 3.6rem;
+  width: 8rem;
+  margin-top: 14px;
+  margin-left: 20px;
+  padding-top: 15px;
+  background-image: url(youtube.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: white;
+  background-size: 30px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  border: 2px solid rgb(31, 35, 31);
+}
+#UnboxingButton:hover {
+  transform: scale(1.1, 1.1);
+  /* border-radius: 10px; */
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#ytreview {
+  height: 3.6rem;
+  width: 8rem;
+  margin-top: 14px;
+  margin-left: 20px;
+  padding-top: 19px;
+  background-image: url(youtubereview.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: white;
+  background-size: 60px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  border: 2px solid rgb(31, 35, 31);
+}
+#ytreview:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#amazonbuyBtn {
+  height: 3.6rem;
+  width: 8rem;
+  margin-top: 14px;
+  margin-left: 20px;
+  padding-top: 19px;
+  background-image: url(amazon-logo-transparent.png);
+  background-repeat: no-repeat;
+  background-position: center 10px;
+  background-color: white;
+  background-size: 60px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  border: 2px solid rgb(31, 35, 31);
+}
+#amazonbuyBtn:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#flipkartbuyBtn {
+  height: 3.6rem;
+  width: 8rem;
+  margin-top: 14px;
+  margin-left: 20px;
+  padding-top: 19px;
+  background-image: url(flipkart-logo-vector.svg);
+  background-repeat: no-repeat;
+  background-position: center 10px;
+  background-color: white;
+  background-size: 65px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  border: 2px solid rgb(31, 35, 31);
+}
+#flipkartbuyBtn:hover {
+  transform: scale(1.1, 1.1);
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
