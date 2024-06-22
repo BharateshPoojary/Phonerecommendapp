@@ -197,5 +197,48 @@ window.addEventListener("load", async () => {
 
         })
     });
+    const notification = (imgsrc, notifymsg, msgclassname) => {
+        let msgcontainer = document.createElement('div');
+        msgcontainer.style.display = "flex";
+        msgcontainer.style.flexDirection = "row";
+        msgcontainer.style.alignItems = "center";
+        msgcontainer.style.padding = "20px";
+        let img = document.createElement('img');
+        img.src = imgsrc;
+        img.style.height = "35px";
+        img.style.width = "40px";
+        img.style.padding = "10px";
+        msgcontainer.appendChild(img);
+        let msg = document.createElement('p');
+        msg.innerText = notifymsg;
+        msg.style.color = "white";
+        msgcontainer.appendChild(msg);
+        let toastboxcontainer = document.getElementById('toastbox');
+        let message = document.createElement('div');
+        message.appendChild(msgcontainer);
+        message.classList.add("toastmessage");
+        message.classList.add(msgclassname);
+        toastboxcontainer.appendChild(message);
+        setTimeout(() => {
+            message.remove();
+        }, 3000);
+    }
+    let comparelistcontainer = document.querySelector(".comparelistcontainer");
+    comparelistcontainer.addEventListener("click", () => {
+        let accessing_username = JSON.parse(localStorage.getItem('usernamedetail'));
+        let username = accessing_username.username;
+        if (username == "User") {
+            let signupimgsrc = "exclamation-warning-round-black-yellow-icon.png";
+            let signupmsg = " please signup to our platform to access this feature";
+            let signupmsgclassname = "signup";
+            notification(signupimgsrc, signupmsg, signupmsgclassname);
+            setTimeout(() => {
+                window.location.href = "landing.html";
+            }, 3000);
+        } else {
+            window.location.href = "comparelist.html";
+        }
+    })
+
 });
 

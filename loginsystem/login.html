@@ -5,14 +5,15 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Login to your account </title>
-  <link rel="stylesheet" href="login.css">
+   <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
    <div class="maincontainer">
       <div class="loginform"><span class="welcome">Welcome</span> back- Login to your account</div>
       <div class="formcontainer">
-         <form action="http://localhost/phonerecommendapp(Backend)/login.php" method="post">
+         <div class="form">
             <label for="username"><span>User Name</span></label><br>
             <input type="text" id="username" name="username" required><br>
             <label for="password"><span>Password</span></label><br>
@@ -20,9 +21,11 @@
             <button id="loginbutton">Login</button>
             <div class="signupredirect">Not a member? <a href="signup.html" id="signup">Sign Up</a>
             </div>
-         </form>
+         </div>
       </div>
    </div>
+   <div id="toastbox"></div>
    <script src="login.js"></script>
 </body>
+
 </html>

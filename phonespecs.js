@@ -1,4 +1,30 @@
 window.addEventListener("load", async () => {
+    const notification = (imgsrc, notifymsg, msgclassname) => {
+        let msgcontainer = document.createElement('div');
+        msgcontainer.style.display = "flex";
+        msgcontainer.style.flexDirection = "row";
+        msgcontainer.style.alignItems = "center";
+        msgcontainer.style.padding = "20px";
+        let img = document.createElement('img');
+        img.src = imgsrc;
+        img.style.height = "35px";
+        img.style.width = "40px";
+        img.style.padding = "10px";
+        msgcontainer.appendChild(img);
+        let msg = document.createElement('p');
+        msg.innerText = notifymsg;
+        msg.style.color = "black";
+        msgcontainer.appendChild(msg);
+        let toastboxcontainer = document.getElementById('toastbox');
+        let message = document.createElement('div');
+        message.appendChild(msgcontainer);
+        message.classList.add("toastmessage");
+        message.classList.add(msgclassname);
+        toastboxcontainer.appendChild(message);
+        setTimeout(() => {
+            message.remove();
+        }, 3000);
+    }
     let phoneDetails = JSON.parse(localStorage.getItem('phoneDetails'));
     let accessing_username_from_localstorage = JSON.parse(localStorage.getItem('usernamedetail'));
     let username = accessing_username_from_localstorage.username;
@@ -97,7 +123,49 @@ window.addEventListener("load", async () => {
         addtoFavouritelistbutton.style.display = "none";
         RemoveFavouritelistbutton.style.display = "block";
         RemoveFavouritelistbutton.addEventListener('click', async () => {
-            if (window.confirm(`Are you sure ${username} you want to remove ${phoneDetails.phoneName} from your favouritelist?`)) {
+            let msgandbtncontainer = document.createElement('div');
+            msgandbtncontainer.style.display = "flex";
+            msgandbtncontainer.style.flexDirection = "column";
+            msgandbtncontainer.style.alignItems = "center";
+            msgandbtncontainer.style.padding = "20px";
+            msgandbtncontainer.style.marginTop = "15px";
+            let imgandmsgconatiner = document.createElement('div');
+            imgandmsgconatiner.style.display = "flex";
+            imgandmsgconatiner.style.alignItems = "center";
+            let img = document.createElement('img');
+            img.src = "exclamation-warning-round-black-yellow-icon.png";
+            img.style.height = "35px";
+            img.style.width = "40px";
+            img.style.padding = "10px";
+            imgandmsgconatiner.appendChild(img);
+            let msg = document.createElement('p');
+            msg.innerText = `Are you sure ${username} you want to remove ${phoneDetails.phoneName} from your wish list?`;
+            msg.style.fontSize = "1.2rem";
+            msg.style.color = "black";
+            imgandmsgconatiner.appendChild(msg);
+            let btncontainer = document.createElement('div');
+            btncontainer.style.display = "flex";
+            btncontainer.style.marginBottom = "30px";
+            let okbtn = document.createElement('button');
+            okbtn.innerHTML = "Ok";
+            okbtn.className = "btn";
+            okbtn.style.borderRadius = "18px";
+            btncontainer.appendChild(okbtn);
+            let cancelbtn = document.createElement('button');
+            cancelbtn.style.marginLeft = "5px";
+            cancelbtn.className = "btn";
+            cancelbtn.style.borderRadius = "18px";
+            cancelbtn.innerHTML = "cancel";
+            btncontainer.appendChild(cancelbtn);
+            msgandbtncontainer.appendChild(imgandmsgconatiner);
+            msgandbtncontainer.appendChild(btncontainer);
+            let confirmboxcontainer = document.getElementById('confirmbox');
+            let message = document.createElement('div');
+            message.appendChild(msgandbtncontainer);
+            message.classList.add("confirmmessage");
+            confirmboxcontainer.appendChild(message);
+            okbtn.addEventListener('click', async () => {
+
                 let accessing_username_from_localstorage = JSON.parse(localStorage.getItem('usernamedetail'));
                 let username = accessing_username_from_localstorage.username;
                 let accessing_phonedata_from_localstorage = JSON.parse(localStorage.getItem('phoneDetails'));
@@ -117,7 +185,11 @@ window.addEventListener("load", async () => {
                 if (response.message == "Deleted") {
                     window.location.href = "phonespecs.html";
                 }
-            }
+
+            })
+            cancelbtn.addEventListener("click", () => {
+                message.remove();
+            })
         });
 
     }
@@ -127,8 +199,13 @@ window.addEventListener("load", async () => {
         let username = accessing_username_from_localstorage.username;
         let accessing_phonedata_from_localstorage = JSON.parse(localStorage.getItem('phoneDetails'));
         if (username == "User") {
-            window.alert("Sorry cannot add to wish list please SignUp to our platform");
-            window.location.href = "landing.html";
+            let signupimgsrc = "exclamation-warning-round-black-yellow-icon.png";
+            let signupmsg = "Sorry cannot add to wish list please signup to our platform";
+            let signupmsgclassname = "signup";
+            notification(signupimgsrc, signupmsg, signupmsgclassname);
+            setTimeout(() => {
+                window.location.href = "landing.html";
+            }, 3000);
         } else {
             let userandphonedata = {
                 username: username,
@@ -144,8 +221,14 @@ window.addEventListener("load", async () => {
             })).json();
             console.log(response.message);
             if (response.message == "phoneadded") {
-                window.alert("Added to you wish list successfully");
-                window.location.href = "phonespecs.html";
+                let invalidimgsrc = "confirm-icon.png";
+                let invalidmsg = "Phone added to your wish list successfully";
+                let invalidmsgclassname = "success";
+                notification(invalidimgsrc, invalidmsg, invalidmsgclassname);
+                setTimeout(() => {
+                    window.location.href = "http://127.0.0.1:5502/phonespecs.html"
+
+                }, 3000);
             }
         }
     });
@@ -196,4 +279,10 @@ window.addEventListener("load", async () => {
     go_Back.addEventListener("click", () => {
         window.location.href = "index.html";
     })
+    let comparelistcontainer = document.querySelector(".comparelistcontainer");
+    comparelistcontainer.addEventListener("click", () => {
+        window.location.href = "comparelist.html";
+    })
+
 });
+

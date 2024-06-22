@@ -20,13 +20,20 @@ span {
   color: black;
 }
 .comparelistcontainer {
+  display: flex;
   margin-top: 10px;
   transition: transform 0.3s ease;
+  list-style: none;
+  cursor: pointer;
 }
 .comparelistcontainer:hover {
   transform: scale(1.1, 1.1);
   border-radius: 10px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+#wishlist {
+  font-size: large;
+  margin-top: 10px;
 }
 .wishlistanimate {
   animation: scaleupdown 0.5s infinite alternate;
@@ -42,16 +49,17 @@ span {
   }
 }
 body {
-  background: #ebf2f3;
+  background: white;
 }
 .navcontainer {
   position: fixed;
-  background: #ebf2f3;
+  background: rgba(0, 0, 0, 0.2);
   width: 220px;
+  color: black;
   height: 100%;
   max-height: calc(100vh - 3px);
   overflow-y: auto;
-  margin-left: 5px;
+  /* margin-left: 5px; */
   border-right: 3px solid black;
   border-top-right-radius: 14px;
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
@@ -209,4 +217,104 @@ body::-webkit-scrollbar {
   margin-right: 10px;
   height: 30px;
   width: 30px;
+}
+#toastbox {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.toastmessage {
+  width: 400px;
+  height: 80px;
+  background: white;
+  border-radius: 10px;
+  font-weight: 500;
+  margin: 15px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  transform: translateX(100%); /*To learn */
+  animation: moveleft 0.5s linear forwards;
+}
+@keyframes moveleft {
+  100% {
+    transform: translateX(0);
+  }
+}
+.toastmessage::after {
+  /*To learn */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: black;
+  border-bottom-left-radius: 10px;
+  animation: expirebar 3s linear forwards;
+}
+@keyframes expirebar {
+  100% {
+    width: 0;
+  }
+}
+
+.toastmessage.signup::after {
+  background: yellow;
+}
+
+.toastmessage.mismatched::after {
+  background: red;
+}
+
+.toastmessage.success::after {
+  background: green;
+}
+#confirmbox {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 20px;
+}
+.confirmmessage {
+  width: 500px;
+  height: 130px;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transform: translateX(100%); /*To learn */
+  animation: moveleft 0.5s linear forwards;
+}
+@keyframes moveleft {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes expirebar {
+  100% {
+    width: 0;
+  }
+}
+
+.btn {
+  padding: 0.7rem 1.7rem 0.7rem 1.7rem;
+  font-size: large;
+  cursor: pointer;
+  border: 4px solid rgb(155, 155, 155);
 }
